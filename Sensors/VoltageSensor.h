@@ -33,11 +33,11 @@
 
 class VoltageSensor : public Sensor {
 public:
-	// https://www.amazon.co.jp/gp/product/B0171FA59C
-	explicit VoltageSensor(int _pin, float _cal = (5.f/1024.f)*5.f);
-	float get() const;
+  // https://www.amazon.co.jp/gp/product/B0171FA59C
+  explicit VoltageSensor(int _pin, float _cal = (5.f / 1024.f) * 5.f);
+  float get() const;
 private:
-	float cal_;
+  float cal_;
 };
 
 #endif /* VOLTAGESENSOR_7DFA7028_B9C5_49D5_BC60_4AEE047616A9_H_ */

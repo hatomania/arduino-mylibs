@@ -29,9 +29,10 @@
 #include "VoltageSensor.h"
 #include <Arduino.h>
 
-VoltageSensor::VoltageSensor(int _pin, float _cal): Sensor(_pin), cal_(_cal) {
+VoltageSensor::VoltageSensor(int _pin, float _cal)
+  : Sensor(_pin), cal_(_cal) {
 }
 
 float VoltageSensor::get() const {
-  return (float)analogRead(getPin())*cal_;
+  return (float)analogRead(getPin()) * cal_;
 }

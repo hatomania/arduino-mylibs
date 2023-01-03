@@ -28,5 +28,6 @@
 
 #include "Sensor.h"
 
-Sensor::Sensor(int _addr_or_pin): addr_or_pin_(_addr_or_pin){
+Sensor::Sensor(int _addr_or_pin)
+  : addr_or_pin_(_addr_or_pin) {
 }

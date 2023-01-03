@@ -29,7 +29,7 @@
 #include "VoltageSensor.h"
 #include <Arduino.h>
 
-VoltageSensor::VoltageSensor(int _pin, float _cal)
+VoltageSensor::VoltageSensor(uint8_t _pin, float _cal)
   : Sensor(_pin), cal_(_cal) {
 }
 

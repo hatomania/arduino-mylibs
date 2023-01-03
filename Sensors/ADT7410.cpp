@@ -29,7 +29,7 @@
 #include "ADT7410.h"
 #include "Wire.h"
 
-ADT7410::ADT7410(int _addr)
+ADT7410::ADT7410(uint8_t _addr)
   : Sensor(_addr) {
 }
 

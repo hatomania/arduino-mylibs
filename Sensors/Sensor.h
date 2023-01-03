@@ -31,18 +31,19 @@
 
 class Sensor {
 public:
-  explicit Sensor(int _addr_or_pin);
+  Sensor() = delete;
+  explicit Sensor(uint8_t _addr_or_pin);
   virtual float get() const = 0;
   virtual float get2() const { return 0.f; }
   virtual float get3() const { return 0.f; }
   virtual float get4() const { return 0.f; }
   virtual float get5() const { return 0.f; }
-  int getRaw() { return 0xFFFF; }
+  uint16_t getRaw() { return 0xFFFF; }
 protected:
-  int getAddr() const { return addr_or_pin_; }
-  int getPin() const { return addr_or_pin_; }
+  uint8_t getAddr() const { return addr_or_pin_; }
+  uint8_t getPin() const { return addr_or_pin_; }
 private:
-  int addr_or_pin_;
+  uint8_t addr_or_pin_;
 };
 
 #endif /* SENSOR_6CB155C6_A999_4276_80F3_791ACB9B8A6F_H_ */

@@ -33,8 +33,9 @@
 
 class VoltageSensor : public Sensor {
 public:
+  VoltageSensor() = delete;
   // https://www.amazon.co.jp/gp/product/B0171FA59C
-  explicit VoltageSensor(int _pin, float _cal = (5.f / 1024.f) * 5.f);
+  explicit VoltageSensor(uint8_t _pin, float _cal = (5.f / 1024.f) * 5.f);
   float get() const;
 private:
   float cal_;

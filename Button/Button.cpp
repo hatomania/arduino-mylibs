@@ -35,7 +35,7 @@ ButtonAction::ButtonAction(uint8_t _pin)
     pinMode(_pin, INPUT_PULLUP);
   }
 }
-void ButtonAction::pressing(bool _is_triggered) const {}
+void ButtonAction::pressing(bool _triggered) const {}
 void ButtonAction::released() const {}
 
 Button::Button(ButtonAction** const _ba, uint16_t _interval)

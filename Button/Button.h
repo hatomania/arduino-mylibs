@@ -34,7 +34,7 @@ class ButtonAction {
 public:
   ButtonAction() = delete;
   explicit ButtonAction(uint8_t _pin);
-  virtual void pressing(bool _is_triggered) const;
+  virtual void pressing(bool _triggered) const;
   virtual void released() const;
 
 protected:

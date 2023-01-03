@@ -37,6 +37,9 @@ public:
   virtual void pressing(bool _is_triggered) const;
   virtual void released() const;
 
+protected:
+  static const uint8_t kINVALID_PIN = 0xFF;
+
 private:
   uint8_t pin_;
   uint8_t last_pin_stat_;
@@ -46,7 +49,7 @@ private:
 class ButtonActionFooter : public ButtonAction {
 public:
   explicit ButtonActionFooter()
-    : ButtonAction(0xFF) {}
+    : ButtonAction(ButtonAction::kINVALID_PIN) {}
 };
 
 class Button {

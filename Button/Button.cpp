@@ -30,14 +30,18 @@
 #include "Button.h"
 
 ButtonAction::ButtonAction(uint8_t _pin)
-  : pin_(_pin), last_pin_stat_(1), pressing_cnt_(0) {}
+  : pin_(_pin), last_pin_stat_(1), pressing_cnt_(0) {
+  if (_pin != ButtonAction::kINVALID_PIN) {
+    pinMode(_pin, INPUT_PULLUP);
+  }
+}
 void ButtonAction::pressing(bool _is_triggered) const {}
 void ButtonAction::released() const {}
 
 Button::Button(ButtonAction** const _ba, uint16_t _interval)
   : ba_(_ba), interval_(_interval) {}
 void Button::action() const {
-  for (uint8_t i = 0; ba_[i]->pin_ != 0xFF; ++i) {
+  for (uint8_t i = 0; ba_[i]->pin_ != ButtonAction::kINVALID_PIN; ++i) {
     ButtonAction* const ba = ba_[i];
     uint8_t now_pin_stat = digitalRead(ba->pin_);
     if (ba->last_pin_stat_ > now_pin_stat) {

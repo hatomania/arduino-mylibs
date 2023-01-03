@@ -33,7 +33,7 @@
 
 class ADT7410 : public Sensor {
 public:
-  explicit ADT7410(int _addr);
+  explicit ADT7410(uint8_t _addr);
   float get() const;
 };
 

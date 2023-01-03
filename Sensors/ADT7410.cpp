@@ -26,6 +26,7 @@
 / THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /============================================================================*/
 
+#include <Arduino.h>
 #include "ADT7410.h"
 #include "Wire.h"
 
@@ -39,7 +40,7 @@ float ADT7410::get() const {
   float fVal;
   int iVal;
 
-  Wire.requestFrom(getAddr(), 2);  //2バイト要求
+  Wire.requestFrom(getAddr(), (uint8_t)2);  //2バイト要求
 
   uiVal = (uint8_t)Wire.read() << 8;  // 1バイト読み出しで上位にシフト
   uiVal |= Wire.read();               // 1バイト読み出して下位にセット

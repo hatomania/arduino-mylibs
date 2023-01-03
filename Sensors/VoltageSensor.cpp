@@ -26,8 +26,8 @@
 / THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /============================================================================*/
 
-#include "VoltageSensor.h"
 #include <Arduino.h>
+#include "VoltageSensor.h"
 
 VoltageSensor::VoltageSensor(uint8_t _pin, float _cal)
   : Sensor(_pin), cal_(_cal) {

@@ -26,6 +26,7 @@
 / THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /============================================================================*/
 
+#include <Arduino.h>
 #include "Sensor.h"
 
 Sensor::Sensor(uint8_t _addr_or_pin)
